@@ -1,0 +1,36 @@
+{
+  "name": "haihong-presales-hub",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "node --watch server/index.js",
+    "start": "node server/index.js",
+    "start:local-service": "node scripts/start-local-service.js",
+    "init-admin": "node scripts/init-admin.js",
+    "seed:demo": "node scripts/seed-demo-data.js",
+    "seed:test-roster": "node scripts/apply-test-roster.js",
+    "seed:map-demo": "node scripts/seed-map-demo-data.js",
+    "build:quote-logo": "node scripts/extract-quote-logo.mjs",
+    "backup": "node scripts/backup.js",
+    "backup:restore-drill": "node scripts/restore-backup.js",
+    "contract-template:adapt": "node scripts/adapt-production-contract-template.js",
+    "test": "node --test --test-concurrency=1 tests/*.test.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "12.11.1",
+    "docx": "9.7.1",
+    "exceljs": "4.4.0",
+    "express": "5.2.1",
+    "jszip": "3.10.1",
+    "multer": "2.2.0",
+    "pdfjs-dist": "5.7.284",
+    "saxes": "5.0.1"
+  },
+  "overrides": {
+    "uuid": "11.1.1"
+  }
+}

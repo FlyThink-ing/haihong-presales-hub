@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Haihong Presales Hub 低保真交互原型" />
+    <title>海弘售前协同管理系统｜低保真原型</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="prototype-banner">
+      <span>低保真交互原型 · v0.2</span>
+      <span>全部内容均为虚构演示数据，不连接数据库</span>
+    </div>
+
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">HH</div>
+          <div>
+            <strong>海弘售前协同</strong>
+            <small>Presales Hub</small>
+          </div>
+        </div>
+
+        <nav id="main-nav" aria-label="主导航"></nav>
+
+        <div class="sidebar-foot">
+          <label for="role-switch">原型角色切换</label>
+          <select id="role-switch">
+            <option value="presales">售前人员 · 陈楠</option>
+            <option value="manager">部门负责人 · 周主管</option>
+            <option value="vp">副总经理 · 林副总</option>
+          </select>
+          <div class="role-note" id="role-note">仅可查看本人负责客户</div>
+        </div>
+      </aside>
+
+      <div class="main-column">
+        <header class="topbar">
+          <button class="menu-button" id="menu-button" aria-label="打开导航">☰</button>
+          <div class="global-search">
+            <span aria-hidden="true">⌕</span>
+            <input id="global-search" type="search" placeholder="搜索有权限查看的客户…" />
+          </div>
+          <button class="icon-button" data-action="go-reminders" aria-label="提醒">
+            🔔<span class="notification-dot">3</span>
+          </button>
+          <div class="current-user">
+            <span class="avatar">陈</span>
+            <span><strong id="current-user-name">陈楠</strong><small id="current-user-role">售前人员</small></span>
+          </div>
+        </header>
+
+        <main id="app" tabindex="-1"></main>
+      </div>
+    </div>
+
+    <div id="modal-root"></div>
+    <div id="toast-root" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

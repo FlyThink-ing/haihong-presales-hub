@@ -1,0 +1,17 @@
+:root { font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif; color: #172b43; background: #eef3f7; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.bar { position: sticky; top: 0; z-index: 2; padding: 14px 22px; border-bottom: 1px solid #dce4eb; background: #fff; }
+.bar strong, .bar small { display: block; overflow-wrap: anywhere; }
+.bar small { margin-top: 4px; color: #66788c; }
+.page { max-width: 1160px; margin: 18px auto; padding: 28px; border: 1px solid #dce4eb; border-radius: 12px; background: #fff; }
+p { margin: 0 0 10px; line-height: 1.75; white-space: pre-wrap; overflow-wrap: anywhere; }
+.notice { margin-bottom: 18px; padding: 10px 12px; border: 1px solid #c9dff1; border-radius: 8px; color: #315d7c; background: #eef7ff; }
+.empty { padding: 44px; color: #66788c; text-align: center; }
+.sheet { margin-bottom: 28px; }
+.sheet h2, .slide h2 { margin: 0 0 12px; font-size: 17px; }
+.table-wrap { max-width: 100%; overflow: auto; border: 1px solid #dce4eb; border-radius: 8px; }
+table { min-width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { min-width: 100px; max-width: 360px; padding: 8px 10px; border: 1px solid #e3e9ee; vertical-align: top; white-space: pre-wrap; overflow-wrap: anywhere; }
+.slide { min-height: 240px; margin-bottom: 18px; padding: 24px; border: 1px solid #dce4eb; border-radius: 10px; background: #fff; }
+.page img { max-width: 100%; height: auto; }

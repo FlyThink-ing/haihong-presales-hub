@@ -1,0 +1,10 @@
+{
+  "reviewNumber": "GS(YYYY)NNNN号",
+  "sourceUrl": "https://bzdt.tianditu.gov.cn/YOUR_OFFICIAL_DOWNLOAD_PAGE",
+  "assetFile": "china-standard-map-original.jpg",
+  "sha256": "CALCULATE_THE_ORIGINAL_FILE_SHA256_HERE",
+  "preserveOriginal": true,
+  "noCrop": true,
+  "noBoundaryModification": true,
+  "regionAnchors": []
+}

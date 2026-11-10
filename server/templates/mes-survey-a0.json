@@ -1,0 +1,155 @@
+{
+  "code": "MES-PRESALES-SURVEY",
+  "version": "A/0",
+  "name": "MES 项目售前调研记录表",
+  "sourceSha256": "dc7f07515fbeee59e0fc98cc9fd35a3e730259336fb618e1a83c1498376e06dd",
+  "modules": [
+    {
+      "key": "management",
+      "name": "高层及项目负责人",
+      "description": "项目立项动机与范围，决定后续所有方案的方向。",
+      "questions": [
+        { "id": "m1", "prompt": "上系统的原因是什么？主要想解决哪些问题？", "help": "区分客户审核要求和企业主动提升管理，明确方案重心。", "required": true },
+        { "id": "m2", "prompt": "上系统后期望获得的效益有哪些？是否有关键效益指标？", "help": "尽量量化，便于后期验收和价值汇报。", "required": true },
+        { "id": "m3", "prompt": "上系统范围包含哪些？", "help": "确认可追溯、生产监控、物料监控、品质控制、物流、SPC、预警、设备互联和成本分析等范围。", "required": true },
+        { "id": "m4", "prompt": "公司对信息化整体规划有哪些？", "help": "明确 MES 在整体 IT 蓝图中的位置，避免重复建设。", "required": false },
+        { "id": "m5", "prompt": "公司组织架构？是否多组织、多工厂？是并行还是上下游关系？", "help": "多工厂关系会影响部署架构和集团管控。", "required": true }
+      ]
+    },
+    {
+      "key": "informationTechnology",
+      "name": "IT / 信息化",
+      "description": "网络、部署和对接能力，决定实施可行性与接口工作量。",
+      "questions": [
+        { "id": "it1", "prompt": "目前公司网络架构是怎样的？车间是否都部署了网络？现有速度是多少？", "help": "无网络区域需要提前规划布线。", "required": true },
+        { "id": "it2", "prompt": "MES 数据存储如何打算？本地部署还是云端部署？", "help": "决定服务器采购与运维方式。", "required": true },
+        { "id": "it3", "prompt": "现有信息化产品有哪些？是否需要做数据对接和交互？", "help": "列出 ERP、WMS、OA 等系统名称及版本，逐一确认对接需求。", "required": true },
+        { "id": "it4", "prompt": "是否需要支持集团化部署？是否有云端存储诉求？", "help": "影响系统架构选型。", "required": false },
+        { "id": "it5", "prompt": "对数据安全和正版系统是否有要求？", "help": "客户审核类项目常有数据合规要求。", "required": false },
+        { "id": "it6", "prompt": "切换到现在的 ERP 用了多久？", "help": "用于评估客户上线配合度与实施耐受度。", "required": false },
+        { "id": "it7", "prompt": "是否有 BI 看板诉求？", "help": "明确是否需要可视化大屏或报表平台。", "required": false }
+      ]
+    },
+    {
+      "key": "processEngineering",
+      "name": "工艺部门",
+      "description": "BOM、工艺版本和工序关系是线束行业调研核心。",
+      "questions": [
+        { "id": "t1", "prompt": "BOM 的来源？工序关系的来源？", "help": "明确主数据来自 ERP 还是 MES 自建，避免双维护。", "required": true },
+        { "id": "t2", "prompt": "项目式生产还是订单式生产？", "help": "决定排产与工单逻辑。", "required": true },
+        { "id": "t3", "prompt": "生产过程中是否存在工艺变更？", "help": "涉及工艺版本控制与现场变更管控。", "required": true },
+        { "id": "t4", "prompt": "工艺版本文件如何审批、下发和生效？", "help": "梳理现状审批流，作为系统流程设计依据。", "required": true },
+        { "id": "t5", "prompt": "内部产品是否存在买卖关系？", "help": "涉及半成品转移与成本核算。", "required": false },
+        { "id": "t6", "prompt": "工艺参数的执行管控如何进行？是否存在现场更改后版本覆盖？", "help": "确认关键工艺参数的下发、防改和留痕要求。", "required": true }
+      ]
+    },
+    {
+      "key": "productionPlanning",
+      "name": "计划 / 生产管理",
+      "description": "排产、工单、报工和物料扣减构成生产现场主流程。",
+      "questions": [
+        { "id": "p1", "prompt": "目前的生产模式？按订单、按库存，还是其他？", "help": "排产逻辑的基础。", "required": true },
+        { "id": "p2", "prompt": "是否有 ERP 系统生成订单？给 MES 的生产订单包括哪些元素？", "help": "明确工单字段，作为接口设计依据。", "required": true },
+        { "id": "p3", "prompt": "计划单据作业的生命周期多久？日、周还是月？", "help": "了解计划颗粒度。", "required": true },
+        { "id": "p4", "prompt": "生产计划的排产流程是什么？", "help": "梳理现状排产流程。", "required": true },
+        { "id": "p5", "prompt": "生产计划调整与紧急插单的处理及审批流程？", "help": "明确插单审批、优先级和预警。", "required": true },
+        { "id": "p6", "prompt": "物料扣减方式？按工序工单扣料还是最后一道扣？良品、报废如何区分？", "help": "确认扣料到工序的规则。", "required": true },
+        { "id": "p7", "prompt": "标签打印方式？涉及哪些标签？", "help": "确认原材料、半成品、电检和成品标签的打印时机与模板。", "required": true },
+        { "id": "p8", "prompt": "生产计划管理目前存在哪些突出问题？对系统有哪些期望？", "help": "记录现场原话和核心痛点。", "required": true }
+      ]
+    },
+    {
+      "key": "equipmentTooling",
+      "name": "设备 / 模具",
+      "description": "设备集成、点检保养和模具刀片管理。",
+      "questions": [
+        { "id": "e1", "prompt": "是否需要安灯系统？软安灯能否满足？是否需要分层审核？", "help": "明确安灯形态与异常升级机制。", "required": false },
+        { "id": "e2", "prompt": "设备需采集的数据类别？基本参数还是加工参数？", "help": "决定集成深度。", "required": true },
+        { "id": "e3", "prompt": "设备数据获取方式，供应商能否开放完整接口？", "help": "接口能力直接决定集成可行性。", "required": true },
+        { "id": "e4", "prompt": "目前哪些设备具有数据采集接口？能采哪些参数？采集方式？", "help": "结合设备清单逐台确认。", "required": true },
+        { "id": "e5", "prompt": "设备维修的处理流程？反馈对象与手段？关键信息如何记录？", "help": "梳理报修、接单、维修和确认全流程。", "required": false },
+        { "id": "e6", "prompt": "设备保养：保养等级与机制？员工自检还是专业保养？设备寿命如何管理？", "help": "明确保养周期、责任人和寿命预警。", "required": false },
+        { "id": "e7", "prompt": "备件管理：基础信息、寿命设置、损耗累加、异常反馈？", "help": "确认备件全生命周期管理诉求。", "required": false },
+        { "id": "e8", "prompt": "模具、刀具、工装的管理、使用和修理流程？", "help": "明确领用、校验、保养、出入库规则。", "required": true },
+        { "id": "e9", "prompt": "设备管理目前存在哪些主要问题？对 MES 有哪些需求和报表需求？", "help": "记录设备部门真实痛点。", "required": false }
+      ]
+    },
+    {
+      "key": "qualityManagement",
+      "name": "质量管理",
+      "description": "检验、不良、返修和 SPC，是客户审核类项目重点。",
+      "questions": [
+        { "id": "q1", "prompt": "不良品的名称定义？不良大类、不良名称？是否需与产品类型对应？", "help": "建立不良代码体系。", "required": true },
+        { "id": "q2", "prompt": "产品在线测试发生不良，处理流程？在线返修还是离线返修？", "help": "决定返修站设计。", "required": true },
+        { "id": "q3", "prompt": "针对不良品的处理过程是怎样的？", "help": "梳理判定、返修或报废、重测和回流闭环。", "required": true },
+        { "id": "q4", "prompt": "维修站回流规则？如何防止投错回流站？返修后点检是否特殊管理？", "help": "确认防错和回流点控制。", "required": false },
+        { "id": "q6", "prompt": "维修站需要记录哪些项目？更换零件信息是否记录？", "help": "确认维修记录字段。", "required": false },
+        { "id": "q7", "prompt": "如何监控维修异常并及时反应？异常有哪些？期望的预警方式？", "help": "确认异常预警诉求。", "required": false },
+        { "id": "q9", "prompt": "质检范围：首检、末检、巡检，是否还有补充？", "help": "明确检验覆盖范围。", "required": true },
+        { "id": "q10", "prompt": "质检项定义：有哪些质检项？如何判定？", "help": "梳理质检项目和判定规则。", "required": true },
+        { "id": "q12", "prompt": "质检项采集形式：手动还是自动？涵盖人、机、产品哪些信息？", "help": "采集方式决定集成需求。", "required": false },
+        { "id": "q13", "prompt": "不合格品处理：走维修还是报废流程？", "help": "明确不合格品处置走向。", "required": false },
+        { "id": "q14", "prompt": "质量统计分析的数据来源？检验标准有哪些？", "help": "为 SPC 和质量报表建立口径。", "required": false },
+        { "id": "q15", "prompt": "IQC 来料、IPQC 过程、OQC 成品检验流程分别如何？", "help": "逐一梳理三类检验流程。", "required": true },
+        { "id": "q16", "prompt": "首件制作流程？是否需要首检报告模板？是否有客户定制模板？", "help": "确认首件放行规则并索取模板。", "required": true },
+        { "id": "q18", "prompt": "质量管理目前存在哪些主要问题？对 MES 有哪些需求和报表需求？", "help": "记录质量部门真实痛点。", "required": true }
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "key": "equipment",
+      "name": "设备对接清单",
+      "requiredAtLeastOne": true,
+      "fields": [
+        { "key": "name", "label": "设备名称", "type": "text", "required": true },
+        { "key": "maker", "label": "厂家", "type": "text", "required": false },
+        { "key": "model", "label": "品牌型号", "type": "text", "required": false },
+        { "key": "qty", "label": "数量", "type": "number", "required": true },
+        { "key": "able", "label": "是否可以对接", "type": "select", "required": true, "options": ["是", "否", "待定"] },
+        { "key": "way", "label": "对接方式", "type": "select", "required": false, "options": ["文件对接", "接口协议", "PLC", "串口", "其他"] },
+        { "key": "content", "label": "对接内容", "type": "text", "required": true },
+        { "key": "note", "label": "备注", "type": "text", "required": false }
+      ]
+    },
+    {
+      "key": "stations",
+      "name": "MES 工位清单",
+      "requiredAtLeastOne": true,
+      "fields": [
+        { "key": "process", "label": "工序名", "type": "text", "required": true },
+        { "key": "qty", "label": "数量（工位）", "type": "number", "required": true },
+        { "key": "pc", "label": "电脑（一体机）", "type": "number", "required": false },
+        { "key": "scanner", "label": "扫码枪", "type": "number", "required": false },
+        { "key": "printer", "label": "打印机", "type": "number", "required": false },
+        { "key": "pda", "label": "PDA", "type": "number", "required": false },
+        { "key": "note", "label": "备注", "type": "text", "required": false }
+      ]
+    },
+    {
+      "key": "integrations",
+      "name": "第三方系统对接清单",
+      "requiredAtLeastOne": true,
+      "fields": [
+        { "key": "sysname", "label": "系统厂商", "type": "text", "required": true },
+        { "key": "systype", "label": "系统类型", "type": "select", "required": false, "options": ["ERP", "PLM", "QMS", "WMS", "人事系统", "工艺系统", "其他"] },
+        { "key": "form", "label": "对接形式", "type": "select", "required": false, "options": ["API接口", "数据库", "文件协议", "其他"] },
+        { "key": "dir", "label": "对接方向", "type": "text", "required": false },
+        { "key": "rw", "label": "读写类别", "type": "select", "required": false, "options": ["数据读取", "数据回写"] },
+        { "key": "content", "label": "对接内容", "type": "text", "required": true },
+        { "key": "note", "label": "备注", "type": "text", "required": false }
+      ]
+    },
+    {
+      "key": "custom",
+      "name": "定制化需求",
+      "requiredAtLeastOne": true,
+      "fields": [
+        { "key": "dept", "label": "部门 / 模块", "type": "select", "required": true, "options": ["工程需求", "工艺需求", "模具需求", "设备需求", "生产需求", "计划需求", "订单管理", "车间仓库", "品质需求", "仓储需求", "权限分配", "报表看板", "其他"] },
+        { "key": "req", "label": "需求项", "type": "text", "required": true },
+        { "key": "sol", "label": "解决方案及补充", "type": "text", "required": false },
+        { "key": "note", "label": "备注", "type": "text", "required": false }
+      ]
+    }
+  ]
+}

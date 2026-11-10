@@ -1,0 +1,24 @@
+[Unit]
+Description=Haihong Presales Hub
+After=network.target
+
+[Service]
+Type=simple
+User=haihong-presales
+Group=haihong-presales
+WorkingDirectory=/opt/haihong-presales-hub/current
+EnvironmentFile=/etc/haihong-presales-hub/haihong.env
+ExecStart=/usr/bin/node server/index.js
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+KillSignal=SIGTERM
+UMask=0027
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/haihong-presales /var/backups/haihong-presales
+
+[Install]
+WantedBy=multi-user.target
